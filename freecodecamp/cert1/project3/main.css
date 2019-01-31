@@ -1,0 +1,166 @@
+html,body{
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    background-color: #eee;
+    text-align:center;
+  }
+
+header {
+    position: fixed;
+    background-color: #eee;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#hero {
+    margin-top: 100px;
+}
+
+#header-img {
+    width: 40%;
+    height: 40%;
+    padding: 20px;
+    display: flex;
+    text-align: left;
+}
+
+#nav-bar {
+    display: flex;
+    text-align: right;
+    
+}
+
+.nav-link {
+    padding: 35px;
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.button {
+    height: 30px;
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+    color: #000;
+    background-color: #f7d200;
+    border: 0px solid;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#email {
+    height: 20px;
+    width: 280px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+}
+
+.icon {
+    color: rgb(249, 88, 19);
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+    padding: 25px;
+    vertical-align: top;
+    margin-top: 10px;
+}
+
+.desc {
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+#video {
+    width: 500px;
+}
+
+#pricing {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#tenor, #bass, #valve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100%  / 3);
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.level {
+    background-color: #ddd;
+    color: black;
+    padding: 15px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+  
+  ol {
+    margin: 15px 0;
+    
+    li { padding: 5px 0; }
+  }
+  
+  button {
+    border: 0;
+    margin: 15px 0;
+    background-color: #f1c40f;
+    font-weight: 400;
+    
+    &:hover {
+      background-color: orange;
+      transition: background-color 1s;
+    }
+  }
+
+  footer {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #ddd;
+    padding: 20px;
+    
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      
+      li {
+        padding: 0 10px;
+      }
+    }
+    
+    span {
+      margin-top: 5px;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.9em;
+      color: #444;
+    }
+  }
