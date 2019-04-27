@@ -1,0 +1,11 @@
+1) open git bash
+2) go to directory in win partition eg: 
+
+cd /E/Stanislaw/javascript
+
+3) commit changes (eg via Visual Studio Code)
+4) push to remote:
+
+ git push origin master
+
+ 5) use ssh passphrase
