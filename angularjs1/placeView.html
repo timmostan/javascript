@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+    <div data-ng-controller="PlaceController">
+        Country:<input type="text" ng-model="countryName"/>
+        City:<input type="text" ng-model="cityName"/>
+        <button ng-click="addItem()">Add</button>
+        <ul>
+            <li ng-repeat="item in list">{{ item.country +"  : "+ item.city}}</li>
+        </ul>
+    </div>
+    <script src="placeController.js"></script>
+</body>
+</html>

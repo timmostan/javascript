@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>AngularJS - Controllers and Scope</title>
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="EmployeeController">
+
+     Employee Name : <input type="text" ng-model="newEmployee"/>
+    <button ng-click="addEmployee()">Add</button>
+    <h2>Employees</h2>
+
+    <ul>
+        <li ng-repeat="name in names"> {{ name }} </li>
+    </ul>
+
+</div>
+<script>
+
+    function EmployeeController($scope) {
+        $scope.names = [ "Elano Blumer","Iain Hume"];
+
+        $scope.addEmployee = function() {
+        	$scope.names.push($scope.newEmployee);
+        	$scope.newEmployee = "";
+        }
+    }
+</script>
+</body>
+</html>

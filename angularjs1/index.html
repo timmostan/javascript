@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+   <head>
+       <script type="text/javascript" src="angular.min.js"></script>
+   </head>
+   <body>
+        <div ng-app>
+            <p>Enter Some text : <input type="text" ng-model="someText"></p>
+            <!--<p>Hello <span ng-bind="someText"></span>!</p>-->    
+            <p>Hello {{someText}}</span>!</p>     
+
+            <div ng-init="players = [{name:'Rooney', country:'England'}, 
+				{name:'Neymar', country:'Brazil'},
+				{name:'Messy', country:'Arjentina'}]">
+
+                <p>Name : <input type="text" ng-model="name"> {{name}}</p>
+
+                <ul>
+                    <li ng-repeat="player in players">
+                    [{{$index}}] {{player.name}} : {{player.country}}
+                    </li>
+                </ul>
+            </div>
+
+            <p>Enter the Name as <b>JournalDev</b> in the input field to demonstrate ng-show.</p>
+            <p>Enter anything n in the input field to demonstrate ng-hide.</b></p>
+            <p>	
+                <b>
+                Enter Blog's Name: <input type="text" ng-model="name2">
+
+                <div ng-show="name2 =='JournalDev'"> Happy Learning!</div>
+
+                <div ng-hide="!name2 == ''"> Welcome to JournalDev.</div>
+                </b>
+            </p>
+
+        </div>
+   </body>
+</html>

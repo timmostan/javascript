@@ -1,0 +1,7 @@
+canvas {
+    position:absolute; top:80px; 
+    cursor:crosshair;
+}
+video {
+    display:none;
+} 
