@@ -9,7 +9,8 @@ class App extends Component {
       { name: 'Ola', age: 35 },
       { name: 'Pams', age: 7 }
     ],
-    otherState: ''
+    otherState: 'other state property',
+    showPersons: false
   }
 
   switchNameHandler = (newName) => {
@@ -34,6 +35,11 @@ class App extends Component {
     })
   }
 
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons:!doesShow});
+  }
+
   render () {
     const style = {
       backgroundColor: 'white',
@@ -50,19 +56,24 @@ class App extends Component {
      <button 
         //inline style
         style={ style }
-        onClick={() => this.switchNameHandler('Stanislaw') }>Switch Name</button>
-     <Person 
-        name={ this.state.persons[0].name } 
-        age={ this.state.persons[0].age }/>
-     <Person 
-        name={ this.state.persons[1].name } 
-        age={ this.state.persons[1].age }
-        //Note: bind is more efficient then the arrow function in button
-        click={ this.switchNameHandler.bind(this, 'Stachu') }
-        changed={this.nameChangedHandler} >Hobbies: like dogs</Person>
-     <Person 
-        name={ this.state.persons[2].name } 
-        age={ this.state.persons[2].age }/>
+        onClick={ this.togglePersonsHandler }>Switch Name</button>
+     { //turnery operator example in JSX - cannot use if here
+      this.state.showPersons ?
+      <div>
+          <Person 
+              name={ this.state.persons[0].name } 
+              age={ this.state.persons[0].age }/>
+          <Person 
+              name={ this.state.persons[1].name } 
+              age={ this.state.persons[1].age }
+              //Note: bind is more efficient then the arrow function in button
+              click={ this.switchNameHandler.bind(this, 'Stachu') }
+              changed={this.nameChangedHandler} >Hobbies: like dogs</Person>
+          <Person 
+              name={ this.state.persons[2].name } 
+              age={ this.state.persons[2].age }/>
+        </div> : null
+      }
     </div>
   );
   //above is same as:
