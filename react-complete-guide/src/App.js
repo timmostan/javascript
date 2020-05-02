@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
+
+const StyledButton = styled.button`
+  background-color: ${ props => props.alt ? 'red' : 'green' };
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color:  ${ props => props.alt ? 'salmon' : 'lightgreen' };;
+    color: black;
+  }
+`;
 
 class App extends Component {
   state = {
@@ -108,17 +123,16 @@ class App extends Component {
     classes = classes.join(' ');
 
     return (
-    <StyleRoot>
       <div className="App">
       <h1>Hi, I'm a React App</h1>
       <p className = { classes }>This is really working!</p>
-      <button 
+      <StyledButton 
           //inline style
-          style={ style }
-          onClick={ this.togglePersonsHandler }>Toggle persons</button>
+          //style={ style }
+          alt = { this.state.showPersons }
+          onClick={ this.togglePersonsHandler }>Toggle persons</StyledButton>
           { persons }
       </div>
-    </StyleRoot>
   );
   //above is same as:
   //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi, I\'m a React App' ));
@@ -126,4 +140,4 @@ class App extends Component {
 
 }
 
-export default Radium(App);
+export default App;
