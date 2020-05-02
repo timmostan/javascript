@@ -113,9 +113,8 @@ class App extends Component {
       <p className = { classes }>This is really working!</p>
       <button 
           //inline style
-          className="button"
-          onClick={ this.togglePersonsHandler }>Toggle persons
-      </button>
+          className="Button"
+          onClick={ this.togglePersonsHandler }>Toggle persons</button>
           { persons }
       </div>
   );
