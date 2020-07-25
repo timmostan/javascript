@@ -47,3 +47,27 @@ test('Sentence11 not ending with termination characters testing', () => {
 test('Sentence12 starting with space testing', () => {
     expect(validateSentence(" To jest moje testowe zdanie.")).toBe(false);
 });
+
+test('Sentence13 all OK testing', () => {
+    expect(validateSentence("To jest moje, testowe zdanie?!")).toBe(true);
+});
+
+test('Sentence14 coma in a bad place testing', () => {
+    expect(validateSentence("To jest moje , testowe zdanie?!")).toBe(false);
+});
+
+test('Sentence15 all OK testing', () => {
+    expect(validateSentence("To jest moje: testowe, testowe zdanie?!")).toBe(true);
+});
+
+test('Sentence16 all OK testing', () => {
+    expect(validateSentence("To jest moje; testowe zdanie?!")).toBe(true);
+});
+
+test('Sentence17 semi-colon in a bad place testing', () => {
+    expect(validateSentence("To jest moje : testowe zdanie?!")).toBe(false);
+});
+
+test('Sentence18 colon in a bad place testing', () => {
+    expect(validateSentence("To jest moje ; testowe zdanie?!")).toBe(false);
+});
